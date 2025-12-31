@@ -1,23 +1,47 @@
-- name: Create File from Last Comment
+name: Writeup Export
+on:
+  issues:
+    types: [closed]
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  save-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Create File from Last Comment
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+         
           mkdir -p Writeups
+          
           
           TITLE="${{ github.event.issue.title }}"
           SAFE_TITLE=$(echo "$TITLE" | sed -e 's/ /-/g' -e 's/[^A-Za-z0-9.-]//g')
           FILEPATH="Writeups/${SAFE_TITLE}.md"
           
-         
+       
           echo "# $TITLE" > "$FILEPATH"
           echo "" >> "$FILEPATH"
           
-          
+         
           gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json comments --jq '.comments[-1].body' >> "$FILEPATH"
           
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
           
+        
           git add "$FILEPATH"
-          git commit -m "New writeup: $TITLE" || echo "No changes to commit"
-          git push
+
+          if [ -s "$FILEPATH" ]; then
+            git commit -m "New writeup from comment: $TITLE" || echo "No changes to commit"
+            git push
+          else
+            echo "Dosya boş, commit atılmadı."
+          fi
