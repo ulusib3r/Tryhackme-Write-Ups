@@ -1,1 +1,37 @@
+name: Writeup Export
+on:
+  issues:
+    types: [closed]
 
+permissions:
+  contents: write
+
+jobs:
+  create-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Create File from Issue
+        run: |
+        
+          mkdir -p Writeups
+
+        
+          TITLE="${{ github.event.issue.title }}"
+          SAFE_TITLE=$(echo "$TITLE" | sed -e 's/ /-/g' -e 's/[^A-Za-z0-9.-]//g')
+          FILEPATH="Writeups/${SAFE_TITLE}.md"
+
+          echo "# $TITLE" > "$FILEPATH"
+          echo "" >> "$FILEPATH"
+          echo "${{ github.event.issue.body }}" >> "$FILEPATH"
+
+        
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          
+          git add "$FILEPATH"
+       
+          git commit -m "New writeup: $TITLE" || echo "No changes to commit"
+          git push
