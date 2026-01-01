@@ -1,4 +1,5 @@
 # Year of the Rabbit write-up
+#### Author: https://github.com/nitibyre
 
 I started by scanning the target machine with nmap. Seeing that ports 21 (FTP), 22 (SSH), and 80 (HTTP) were open, I turned my attention to the web side.
 
