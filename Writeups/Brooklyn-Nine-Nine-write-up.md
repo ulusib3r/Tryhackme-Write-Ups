@@ -1,6 +1,6 @@
-# Brooklyn Nine Nine write-up
-
 # Brooklyn Nine Nine CTF Write-up 🕵️‍♂️
+
+#### Author: https://github.com/MehmetEfeEkici0324
 
 First, I performed a network scan using `nmap` to identify open ports and services:
 - **Port 21:** FTP
