@@ -1,6 +1,5 @@
 # BountyHacker Write-up
-
-### **Cowboy Hacker (Bounty Hacker) Write-Up!**
+#### Author: https://github.com/nitibyre
 
 First, I started by scanning the target IP address with ‘nmap’. I saw that ports 21, 22, and 80 were open. Looking a little more closely, I saw that the ftp (21) port allowed anonymous access without a password. 
 
