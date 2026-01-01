@@ -1,4 +1,5 @@
 # Corridor write-up
+#### Author: https://github.com/nitibyre
 
 I began by navigating to the target IP address in my browser. Upon opening the website, I was greeted with an image featuring several doors. 
 
