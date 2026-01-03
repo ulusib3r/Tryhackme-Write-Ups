@@ -1,6 +1,6 @@
 # Simple CTF write-up
 
-# Simple CTF Write-Up
+
 #### Author: https://github.com/elifnurozkaya
 
 ## How many services are running under port 1000? 
