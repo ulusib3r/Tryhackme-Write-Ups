@@ -1,4 +1,4 @@
-# CVE-2019-14287 write-up
+# Sudo Security Bypass (CVE-2019-14287) Write-Up
 #### Author: https://github.com/picomve
 Firstly i see what can i do as root with `sudo -l` command.
 And then i realize that i can call bash as root.
