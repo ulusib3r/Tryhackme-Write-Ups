@@ -1,6 +1,6 @@
-# Pickle Rick wirte-up
+# Pickle Rick Write-up
 
-
+#### Author: https://github.com/mbekov
 <img width="637" height="465" alt="Image" src="https://github.com/user-attachments/assets/94cfb047-1fc6-4ee2-a998-45236801e04b" /> 
 
 
