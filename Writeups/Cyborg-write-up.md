@@ -1,5 +1,5 @@
 # Cyborg write-up
-
+#### Author: https://github.com/Nazlii07
 Cyborg Writeup  
 Nmap Scan 
 We start with a basic port scan to identify open services on the target machine: 
