@@ -1,7 +1,5 @@
 # Sudo Buffer Overflow Write-Up
 
-# CVE-2019-18634 Sudo Privilege Escalation Writeup
-
 #### Author: https://github.com/picomve
 ## 1. Enumeration & DetectionFirst, I checked my current privileges and looked for misconfigurations:
 
