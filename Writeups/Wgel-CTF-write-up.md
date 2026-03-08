@@ -1,3 +1,0 @@
-# Wgel CTF write-up
-
-
