@@ -1,6 +1,6 @@
 # RootMe Write-up
 
-# Root Me - Writeup
+#### Author: https://github.com/elifnurozkaya
 
 ### **Level:** Easy
 
